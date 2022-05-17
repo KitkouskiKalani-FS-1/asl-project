@@ -5,7 +5,7 @@
     <ul>
     {% for product in products %}
         <li>
-            {{product.name}} - 
+            {{product.name}} - ${{product.price}} - 
             <a href="/products/{{ product.id }}">Edit</a>
             <a href="/products/{{ product.id }}/delete">Delete</a>
         </li>
