@@ -1,16 +1,25 @@
 {% extends "layouts/base.twig" %}
 
 {% block main_content %}
-    <h2>About {{product.name}}</h2>
+    <h2>About {{product.title}}</h2>
     <ul styles="list-style:none;">
         <li>
             <label>Id: </label> {{product.id}}
         </li>
         <li>
-            <label>Name: </label> {{product.name}}
+            <label>Name: </label> {{product.title}}
         </li>
         <li>
             <label>Price: </label> {{product.price}}
+        </li>
+        <li>
+            <label>Product Slug: </label> {{product.slug}}
+        </li>
+        <li>
+            <label>Product Description: </label> {{product.description}}
+        </li>
+        <li>
+            <label>Product is active and public? </label> {{product.is_published}}
         </li>
     </ul>
     <p>
