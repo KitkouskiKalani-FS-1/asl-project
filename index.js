@@ -2,6 +2,11 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
+
+app.use("/public", express.static('public'))
+const fileUpload = require('express-fileupload')
+app.use(fileUpload())
+
 const productRouter = require('./routes/Products')
 const variantsRouter = require('./routes/Variants')
 const imagesRouter = require('./routes/Images')
