@@ -6,10 +6,15 @@
     {% for product in products %}
         <li>
             {{product.title}} - ${{product.price}} - 
-            <a href="/products/{{ product.id }}">Edit</a>
-            <a href="/products/{{ product.id }}/delete">Delete</a>
+            <a class="underline underline-offset-1" href="/products/{{ product.id }}">Edit</a>
+            <a class="underline underline-offset-1" href="/products/{{ product.id }}/delete">Delete</a>
         </li>
     {% endfor %}
     </ul>
-    <a href="/products/new">Create New Product</a>
+    
+    <a href="/products/new">
+    <button class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" type="submit">
+        Create New Product
+    </button>
+    </a>
 {% endblock %}

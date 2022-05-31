@@ -6,10 +6,14 @@
     {% for image in images %}
         <li>
             {{image.id}} -
-            <a href="/images/{{ image.id }}">Edit</a>
-            <a href="/images/{{ image.id }}/delete">Delete</a>
+            <a class="underline underline-offset-1" href="/images/{{ image.id }}">Edit</a>
+            <a class="underline underline-offset-1" href="/images/{{ image.id }}/delete">Delete</a>
         </li>
     {% endfor %}
     </ul>
-    <a href="/images/new">Create New Image</a>
+    <a href="/images/new">
+    <button class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" type="submit">
+        Create New Image
+    </button>
+    </a>
 {% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'layouts/base.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+{% endblock %}
+
+{% block main_content %}
+<div class="w-3/5 py-4 px-8 m-auto bg-white shadow-lg rounded-lg my-20 bg-slate-100">
+  <div class="flex justify-center md:justify-start -mt-16">
+    <img class="w-120 h-60" src="/public/images/{{ variant.Images[0].id }}{{ variant.Images[0].extension }}">
+  </div>
+  <div>
+    <div>
+        <h2 class="text-gray-800 text-3xl font-semibold">{{ product.title }} - {{ variant.title }}</h2>
+        <p class="mt-2 text-gray-600">{{ variant.description }}</p>
+        <h1>Different Variants:</h1>
+        <div>
+        {% for option in product.Variants %}
+                <a href="/store/products/{{ product.slug }}?v={{ option.slug }}">
+                    <button class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" type="submit">
+                        {{ option.title }}
+                    </button>
+                </a>
+        {% endfor %}
+    </div>
+    <h2>Price : ${{ variant.price }}</h2>
+    <h3>Amount in Stock : {{ variant.inventory }} </h3> 
+    </div>
+  </div> 
+</div>
+{% endblock %}

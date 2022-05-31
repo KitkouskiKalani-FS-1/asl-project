@@ -6,10 +6,14 @@
     {% for variant in variants %}
         <li>
             {{variant.title}} - 
-            <a href="/variants/{{ variant.id }}">Edit</a>
-            <a href="/variants/{{ variant.id }}/delete">Delete</a>
+            <a class="underline underline-offset-1" href="/variants/{{ variant.id }}">Edit</a>
+            <a class="underline underline-offset-1" href="/variants/{{ variant.id }}/delete">Delete</a>
         </li>
     {% endfor %}
     </ul>
-    <a href="/variants/new">Create Variant</a>
+    <a href="/variants/new">
+    <button class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" type="submit">
+        Create Variant
+    </button>
+    </a>
 {% endblock %}

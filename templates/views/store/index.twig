@@ -1,0 +1,24 @@
+{% extends 'layouts/base.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+{% endblock %}
+
+{% block main_content %}
+<div class="container-lg min-h-full py-10 flex flex-wrap justify-center gap-8">
+{% for product in products %}
+    <a href="store/products/{{ product.slug }}">
+        <div class="max-w-sm rounded overflow-hidden shadow-lg bg-slate-100">
+        <img class="indexImg" src="/public/images/{{ product.Variants[0].Images[0].id }}{{ product.Variants[0].Images[0].extension }}">
+        <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2">{{ product.title }}</div>
+            <div class="text-l mb-2">${{ product.price }}</div>
+            <p class="text-gray-700 text-base">
+                {{ product.description }}
+            </p>
+        </div>
+        </div>
+    </a>
+{% endfor %}
+</div>
+{% endblock %}
